@@ -4,15 +4,17 @@
     :class="{
       'border-transparent': !isActiveWeek,
       'border-indigo': isActiveWeek,
-      'opacity-50': isInPast
-    }">
+      'opacity-50': isInPast,
+    }"
+  >
     <h3 class="mb-6">Week of {{ formattedStartDate }}</h3>
     <div class="flex flex-col md:flex-row justify-between">
       <TrainingDay
         v-for="(day, index) in days"
         :key="index"
         :day="day"
-        :workout="workouts[index]" />
+        :workout="workouts[index]"
+      />
     </div>
   </div>
 </template>
@@ -33,16 +35,16 @@ export default {
   props: {
     workouts: {
       type: Array,
-      required: true
+      required: true,
     },
     raceDay: {
       type: Date,
-      required: true
+      required: true,
     },
     week: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     startDate() {
@@ -53,7 +55,7 @@ export default {
       return format(this.startDate, 'MMM D')
     },
     days() {
-      return [0,1,2,3,4,5,6].map(i => addDays(this.startDate, i))
+      return [0, 1, 2, 3, 4, 5, 6].map(i => addDays(this.startDate, i))
     },
     isActiveWeek() {
       let today = new Date()
@@ -63,9 +65,9 @@ export default {
       if (this.isActiveWeek === true) {
         return false
       }
-      
+
       return isPast(this.startDate)
-    }
+    },
   },
 }
 </script>

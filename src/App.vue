@@ -6,11 +6,10 @@
         v-model="raceDay"
         @change="updateRaceDay"
         label="Race date"
-        class="mb-8" />
+        class="mb-8"
+      />
     </header>
-    <TrainingSchedule
-      v-if="raceDate"
-      :race-day="raceDate" />
+    <TrainingSchedule v-if="raceDate" :race-day="raceDate" />
   </div>
 </template>
 
@@ -23,11 +22,11 @@ export default {
   name: 'app',
   components: {
     DatePicker,
-    TrainingSchedule
+    TrainingSchedule,
   },
   data() {
     return {
-      raceDay: ''
+      raceDay: '',
     }
   },
   computed: {
@@ -35,9 +34,9 @@ export default {
       if (this.raceDay === '') {
         return
       }
-      
+
       return parse(this.raceDay)
-    }
+    },
   },
   methods: {
     updateRaceDay() {
@@ -46,7 +45,7 @@ export default {
       } else {
         window.localStorage.setItem('mcbrideHalfMarathonTraining', this.raceDay)
       }
-    }
+    },
   },
   created() {
     // remember your race date if you've set it before
@@ -54,7 +53,7 @@ export default {
     if (raceDay !== null) {
       this.raceDay = raceDay
     }
-  }
+  },
 }
 </script>
 

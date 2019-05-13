@@ -5,7 +5,8 @@
       :key="$index"
       :week="$index"
       :workouts="workouts"
-      :race-day="raceDay" />
+      :race-day="raceDay"
+    />
   </div>
 </template>
 
@@ -18,7 +19,7 @@ export default {
   props: {
     raceDay: {
       type: Date,
-      required: true
+      required: true,
     },
   },
   components: {
@@ -27,7 +28,7 @@ export default {
   computed: {
     schedule() {
       return schedule
-    }
+    },
   },
 }
 </script>

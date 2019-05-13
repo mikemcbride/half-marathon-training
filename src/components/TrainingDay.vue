@@ -1,6 +1,8 @@
 <template lang="html">
   <div class="mb-4 md:mb-0">
-    <div class="uppercase mb-2 text-xs font-normal text-grey-darker">{{ date }}</div>
+    <div class="uppercase mb-2 text-xs font-normal text-grey-darker">
+      {{ date }}
+    </div>
     <div class="font-semibold">{{ workout }}</div>
   </div>
 </template>
@@ -13,17 +15,17 @@ export default {
   props: {
     day: {
       type: Date,
-      required: true
+      required: true,
     },
     workout: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     date() {
       return format(this.day, 'dddd')
-    }
+    },
   },
 }
 </script>

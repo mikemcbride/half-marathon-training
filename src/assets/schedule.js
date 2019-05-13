@@ -6,7 +6,7 @@ export default [
     '3 mi run',
     'Rest',
     '4 mi run',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -15,7 +15,7 @@ export default [
     '3 mi run',
     'Rest',
     '5 mi run',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -24,7 +24,7 @@ export default [
     '3 mi run',
     'Rest',
     '6 mi run',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -33,7 +33,7 @@ export default [
     '3 mi run',
     'Rest',
     '7 mi run',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -42,7 +42,7 @@ export default [
     '3 mi run',
     'Rest',
     '8 mi run',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -51,7 +51,7 @@ export default [
     '3 mi run',
     'Rest',
     '5-K Race',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -60,7 +60,7 @@ export default [
     '3 mi run',
     'Rest',
     '9 mi run',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -69,7 +69,7 @@ export default [
     '3 mi run',
     'Rest',
     '10 mi run',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -78,7 +78,7 @@ export default [
     '3 mi run',
     'Rest',
     '10-K Race',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -87,7 +87,7 @@ export default [
     '3 mi run',
     'Rest',
     '11 mi run',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -96,7 +96,7 @@ export default [
     '3 mi run',
     'Rest',
     '12 mi run',
-    '60 min cross'
+    '60 min cross',
   ],
   [
     'Rest',
@@ -105,6 +105,6 @@ export default [
     '2 mi run',
     'Rest',
     'Rest',
-    'Half Marathon'
-  ]
+    'Half Marathon',
+  ],
 ]

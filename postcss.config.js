@@ -13,11 +13,11 @@ module.exports = {
                     return content.match(/[a-zA-Z0-9-:_/]+/g) || []
                   }
                 },
-                extensions: ['vue', 'html']
-              }
-            ]
-          })
+                extensions: ['vue', 'html'],
+              },
+            ],
+          }),
         ]
-      : [])
-  ]
+      : []),
+  ],
 }

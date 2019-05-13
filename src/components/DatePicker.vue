@@ -8,7 +8,8 @@
       v-bind="$attrs"
       :value="value"
       v-on="listeners"
-      class="w-full md:w-auto rounded p-2 font-base border border-grey hover:border-grey-darker focus:outline-none focus:border-indigo">
+      class="w-full md:w-auto rounded p-2 font-base border border-grey hover:border-grey-darker focus:outline-none focus:border-indigo"
+    />
   </label>
 </template>
 
@@ -19,20 +20,20 @@ export default {
   props: {
     value: {
       type: [String, Number, Date],
-      required: true
+      required: true,
     },
     label: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     listeners() {
       return {
         ...this.$listeners,
-        input: event => this.$emit('input', event.target.value)
+        input: event => this.$emit('input', event.target.value),
       }
-    }
-  }
+    },
+  },
 }
 </script>
