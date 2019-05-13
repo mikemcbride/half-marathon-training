@@ -8,7 +8,7 @@
       v-bind="$attrs"
       :value="value"
       v-on="listeners"
-      class="w-full md:w-auto rounded-sm p-2 font-base border border-grey hover:border-grey-darker focus:outline-none focus:border-blue">
+      class="w-full md:w-auto rounded p-2 font-base border border-grey hover:border-grey-darker focus:outline-none focus:border-indigo">
   </label>
 </template>
 
@@ -18,8 +18,8 @@ export default {
   inheritAttrs: false,
   props: {
     value: {
-      type: [String, Number],
-      default: ''
+      type: [String, Number, Date],
+      required: true
     },
     label: {
       type: String,

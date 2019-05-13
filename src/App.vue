@@ -1,15 +1,23 @@
 <template>
   <div id="app" class="font-sans mx-auto p-4 block max-w-xl">
-    <h1 class="mb-8">Half Marathon Training</h1>
-    <DatePicker v-model="raceDay" label="Race date" />
-    <TrainingSchedule v-if="raceDate" :race-day="raceDate" />
+    <header class="md:flex justify-between">
+      <h1 class="mb-8">Half Marathon Training</h1>
+      <DatePicker
+        v-model="raceDay"
+        @change="updateRaceDay"
+        label="Race date"
+        class="mb-8" />
+    </header>
+    <TrainingSchedule
+      v-if="raceDate"
+      :race-day="raceDate" />
   </div>
 </template>
 
 <script>
 import DatePicker from '@/components/DatePicker'
 import TrainingSchedule from '@/components/TrainingSchedule'
-import { parse } from 'date-fns'
+import parse from 'date-fns/parse'
 
 export default {
   name: 'app',
@@ -31,6 +39,22 @@ export default {
       return parse(this.raceDay)
     }
   },
+  methods: {
+    updateRaceDay() {
+      if (this.raceDay === '') {
+        window.localStorage.removeItem('mcbrideHalfMarathonTraining')
+      } else {
+        window.localStorage.setItem('mcbrideHalfMarathonTraining', this.raceDay)
+      }
+    }
+  },
+  created() {
+    // remember your race date if you've set it before
+    let raceDay = window.localStorage.getItem('mcbrideHalfMarathonTraining')
+    if (raceDay !== null) {
+      this.raceDay = raceDay
+    }
+  }
 }
 </script>
 
