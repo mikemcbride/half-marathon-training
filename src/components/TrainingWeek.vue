@@ -58,8 +58,9 @@ export default {
       return [0, 1, 2, 3, 4, 5, 6].map(i => addDays(this.startDate, i))
     },
     isActiveWeek() {
-      let today = new Date()
-      return isSameWeek(today, this.startDate)
+      const weekStartsOn = this.startDate.getDay()
+      const today = new Date()
+      return isSameWeek(today, this.startDate, { weekStartsOn })
     },
     isInPast() {
       if (this.isActiveWeek === true) {
