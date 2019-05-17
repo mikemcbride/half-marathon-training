@@ -1,21 +1,31 @@
 <template lang="html">
   <div
-    class="border-2 bg-white shadow rounded mb-4 p-6"
+    class="bg-white shadow rounded mb-4 px-6 pt-6 pb-2 md:pb-6"
     :class="{
-      'border-transparent': !isActiveWeek,
-      'border-indigo': isActiveWeek,
+      'bg-indigo text-white': isActiveWeek,
       'opacity-50': isInPast,
     }"
+    @click="toggleExpand"
   >
-    <h3 class="mb-6">Week of {{ formattedStartDate }}</h3>
-    <div class="flex flex-col md:flex-row justify-between">
-      <TrainingDay
-        v-for="(day, index) in days"
-        :key="index"
-        :day="day"
-        :workout="workouts[index]"
-      />
+    <div class="flex justify-between">
+      <h3 class="mb-4 md:mb-6">Week of {{ formattedStartDate }}</h3>
+      <span v-if="canExpand">
+        <span v-show="!isExpanded">&#9660;</span>
+        <span v-show="isExpanded">&#9650;</span>
+      </span>
     </div>
+    <transition name="fade">
+      <div
+        v-if="isExpanded"
+        class="flex flex-col md:flex-row justify-between">
+        <TrainingDay
+          v-for="(day, index) in days"
+          :key="index"
+          :day="day"
+          :workout="workouts[index]"
+        />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -70,5 +80,38 @@ export default {
       return isPast(this.startDate)
     },
   },
+  data() {
+    return {
+      canExpand: true,
+      isExpanded: false
+    }
+  },
+  mounted() {
+    // reverse if not on mobile
+    if (window.innerWidth >= 768) {
+      this.isExpanded = true
+      this.canExpand = false
+    }
+  },
+  methods: {
+    toggleExpand() {
+      if (this.canExpand === true) {
+        this.isExpanded = !this.isExpanded
+      }
+    }
+  },
 }
 </script>
+
+<style lang="css">
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s ease
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0
+}
+
+</style>

@@ -1,6 +1,6 @@
 <template lang="html">
-  <label class="block">
-    <div v-if="label !== ''" class="font-semibold mb-2">
+  <label class="block md:flex items-center">
+    <div v-if="label !== ''" class="font-semibold mb-2 md:mb-0 mr-4">
       {{ label }}
     </div>
     <input

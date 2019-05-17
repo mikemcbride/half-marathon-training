@@ -1,12 +1,12 @@
 <template>
-  <div id="app" class="font-sans mx-auto p-4 block max-w-xl">
-    <header class="md:flex justify-between">
-      <h1 class="mb-8">Half Marathon Training</h1>
+  <div id="app" class="font-sans text-grey-darkest mx-auto p-4 block max-w-xl">
+    <header class="md:flex justify-between mb-6">
+      <h1 class="mb-8 md:mb-0">Half Marathon Training</h1>
       <DatePicker
         v-model="raceDay"
         @change="updateRaceDay"
         label="Race date"
-        class="mb-8"
+        class="mb-6 md:mb-0"
       />
     </header>
     <TrainingSchedule v-if="raceDate" :race-day="raceDate" />
