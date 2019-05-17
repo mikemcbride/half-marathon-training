@@ -1,29 +1,9 @@
 # half-marathon-training
 
-## Project setup
-```
-npm install
-```
+Keeps track of a 12 week half-marathon training program, which I grabbed from Hal Higdon. I think I used level 2, but could easily be adjusted by modifying `src/assets/schedule.js`.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This app will keep a localStorage key of the last race date you selected so you don't have to put it in every time. Pretty handy to bookmark this and quickly check what workout you should be doing today.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+On mobile, the weeks are collapsed by default but you can click to toggle them since they take up so much space. The active week block is highlighted, and so is the active day.
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Deployed at https://half-marathon.mcbride.tech
