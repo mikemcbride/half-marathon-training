@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="mb-4 md:mb-0" :class="{'text-yellow': activeDay}">
+  <div class="mb-4 md:mb-0" :class="{'text-pink-dark': activeDay}">
     <div class="uppercase mb-2 text-xs font-normal opacity-75">
       {{ date }}
     </div>

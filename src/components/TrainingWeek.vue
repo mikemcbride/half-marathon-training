@@ -2,7 +2,7 @@
   <div
     class="bg-white shadow rounded mb-4 px-6 pt-6 pb-2 md:pb-6"
     :class="{
-      'bg-indigo text-white': isActiveWeek,
+      'bg-indigo-lightest text-indigo-dark border-2 border-indigo-light': isActiveWeek,
       'opacity-50': isInPast,
     }"
     @click="toggleExpand"
