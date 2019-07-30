@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="mb-4 md:mb-0" :class="{'text-pink-dark': activeDay}">
-    <div class="uppercase mb-2 text-xs font-normal opacity-75">
+  <div class="p-4 mb-4 md:mb-0 rounded border-2 border-transparent" :class="{'border-indigo active-day-bg': activeDay}">
+    <div class="uppercase mb-2 text-xs font-normal">
       {{ date }}
     </div>
     <div class="font-semibold text-xl">{{ workout }}</div>
@@ -33,3 +33,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.active-day-bg {
+  background: rgba(178, 183, 255, 0.6)
+}
+</style>

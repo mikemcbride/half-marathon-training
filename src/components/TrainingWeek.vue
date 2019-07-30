@@ -1,6 +1,6 @@
 <template lang="html">
   <div
-    class="bg-white shadow rounded mb-4 px-6 pt-6 pb-2 md:pb-6"
+    class="bg-white shadow rounded mb-4 px-4 pt-6 pb-2 md:pb-6"
     :class="{
       'bg-indigo-lightest text-indigo-dark border-2 border-indigo-light': isActiveWeek,
       'opacity-50': isInPast,
@@ -8,7 +8,7 @@
     @click="toggleExpand"
   >
     <div class="flex justify-between">
-      <h3 class="mb-4 md:mb-6">Week of {{ formattedStartDate }}</h3>
+      <h3 class="px-2 mb-4">Week of {{ formattedStartDate }}</h3>
       <span v-if="canExpand">
         <span v-show="!isExpanded">&#9660;</span>
         <span v-show="isExpanded">&#9650;</span>
