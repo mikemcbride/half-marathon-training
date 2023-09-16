@@ -1,15 +1,10 @@
 <template lang="html">
-  <label class="block md:flex items-center">
-    <div v-if="label !== ''" class="font-semibold mb-2 md:mb-0 mr-4">
-      {{ label }}
+  <label class="flex items-start md:items-center justify-start flex-col md:flex-row gap-2">
+    <div class="block text-sm font-medium leading-6 text-gray-900">{{ label }}</div>
+    <div class="relative rounded-md shadow-sm">
+      <input type="date" v-bind="$attrs" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)"
+        class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" />
     </div>
-    <input
-      type="date"
-      v-bind="$attrs"
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-      class="w-full md:w-auto rounded p-2 font-base border border-grey hover:border-grey-darker focus:outline-none focus:border-indigo"
-    />
   </label>
 </template>
 
