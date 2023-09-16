@@ -6,8 +6,8 @@
     <input
       type="date"
       v-bind="$attrs"
-      :value="value"
-      v-on="listeners"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
       class="w-full md:w-auto rounded p-2 font-base border border-grey hover:border-grey-darker focus:outline-none focus:border-indigo"
     />
   </label>
@@ -16,9 +16,8 @@
 <script>
 export default {
   name: 'DatePicker',
-  inheritAttrs: false,
   props: {
-    value: {
+    modelValue: {
       type: [String, Number, Date],
       required: true,
     },
@@ -27,13 +26,6 @@ export default {
       default: '',
     },
   },
-  computed: {
-    listeners() {
-      return {
-        ...this.$listeners,
-        input: event => this.$emit('input', event.target.value),
-      }
-    },
-  },
+  emits: ['update:modelValue']
 }
 </script>

@@ -1,8 +1,8 @@
-<template lang="html">
+<template>
   <div
     class="bg-white shadow rounded mb-4 px-4 pt-6 pb-2 md:pb-6"
     :class="{
-      'bg-indigo-lightest text-indigo-dark border-2 border-indigo-light': isActiveWeek,
+      'bg-indigo-50 text-indigo-700 border border-indigo-100': isActiveWeek,
       'opacity-50': isInPast,
     }"
     @click="toggleExpand"
@@ -14,28 +14,22 @@
         <span v-show="isExpanded">&#9650;</span>
       </span>
     </div>
-    <transition name="fade">
-      <div
-        v-if="isExpanded"
-        class="flex flex-col md:flex-row justify-between">
-        <TrainingDay
-          v-for="(day, index) in days"
-          :key="index"
-          :day="day"
-          :workout="workouts[index]"
-        />
-      </div>
-    </transition>
+    <div
+      v-if="isExpanded"
+      class="flex flex-col md:flex-row justify-between">
+      <TrainingDay
+        v-for="(day, index) in days"
+        :key="index"
+        :day="day"
+        :workout="workouts[index]"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import subWeeks from 'date-fns/sub_weeks'
-import addDays from 'date-fns/add_days'
-import format from 'date-fns/format'
-import isSameWeek from 'date-fns/is_same_week'
-import isPast from 'date-fns/is_past'
-import TrainingDay from '@/components/TrainingDay'
+import { subWeeks, addDays, format, isSameWeek, isPast } from 'date-fns'
+import TrainingDay from './TrainingDay.vue'
 
 export default {
   name: 'TrainingWeek',
@@ -62,7 +56,7 @@ export default {
       return addDays(res, 1)
     },
     formattedStartDate() {
-      return format(this.startDate, 'MMM D')
+      return format(this.startDate, 'MMM d')
     },
     days() {
       return [0, 1, 2, 3, 4, 5, 6].map(i => addDays(this.startDate, i))
@@ -102,16 +96,3 @@ export default {
   },
 }
 </script>
-
-<style lang="css">
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .3s ease
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0
-}
-
-</style>
