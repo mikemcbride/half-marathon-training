@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import schedule from '@/assets/schedule'
-import TrainingWeek from '@/components/TrainingWeek'
+import schedule from '../lib/schedule.js'
+import TrainingWeek from './TrainingWeek.vue'
 
 export default {
   name: 'TrainingSchedule',

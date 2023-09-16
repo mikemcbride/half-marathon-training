@@ -8,8 +8,7 @@
 </template>
 
 <script>
-import format from 'date-fns/format'
-import isToday from 'date-fns/is_today'
+import { format, isToday } from 'date-fns'
 
 export default {
   name: 'TrainingDay',
@@ -25,7 +24,7 @@ export default {
   },
   computed: {
     date() {
-      return format(this.day, 'dddd')
+      return format(this.day, 'dd')
     },
     activeDay() {
       return isToday(this.day)

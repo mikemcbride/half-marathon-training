@@ -1,10 +1,10 @@
 <template>
-  <div id="app" class="font-sans text-grey-darkest mx-auto p-4 block max-w-xl">
+  <div id="app" class="font-sans text-gray-900 mx-auto p-4 block max-w-xl">
     <header class="md:flex justify-between mb-6">
       <h1 class="mb-8 md:mb-0">Half Marathon Training</h1>
       <DatePicker
         v-model="raceDay"
-        @change="updateRaceDay"
+        @update:modelValue="updateRaceDay"
         label="Race date"
         class="mb-6 md:mb-0"
       />
@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import DatePicker from '@/components/DatePicker'
-import TrainingSchedule from '@/components/TrainingSchedule'
-import parse from 'date-fns/parse'
+import DatePicker from './components/DatePicker.vue'
+import TrainingSchedule from './components/TrainingSchedule.vue'
+import { parseISO } from 'date-fns'
 
 export default {
   name: 'app',
@@ -35,7 +35,7 @@ export default {
         return
       }
 
-      return parse(this.raceDay)
+      return parseISO(this.raceDay)
     },
   },
   methods: {
@@ -56,9 +56,3 @@ export default {
   },
 }
 </script>
-
-<style>
-@tailwind preflight;
-@tailwind components;
-@tailwind utilities;
-</style>
