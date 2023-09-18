@@ -34,7 +34,7 @@ export default {
       let dom = format(this.day, 'd')
       let f = 'd'
       // first day of week and first day of month get formatted w/ month
-      if (dom === '1' || this.dow === 1) {
+      if (dom === '1' || this.dow === 0) {
         f = 'MMM d'
       }
       return format(this.day, f)
